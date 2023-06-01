@@ -33,14 +33,14 @@
       - Защита DDOS
 
   ## Запуск проекта:
-      - `npx eslint .` - запускает проверку кода
-      - `npm start` - запускает проект в production
-      - `npm run dev` - запускает проект в hot reload
+    `npx eslint .` - запускает проверку кода
+    `npm start` - запускает проект в production
+    `npm run dev` - запускает проект в hot reload
 
 # Ссылки на проект 
-    - [Ссылка на репозиторий проекта](https://github.com/GorillaDevq/movies-explorer-api)
-    - [Ссылка на домен --------]()
-    - IP сервера: 158.160.8.119
+  [Ссылка на репозиторий проекта](https://github.com/GorillaDevq/movies-explorer-api)
+  [Ссылка на домен --------]()
+  IP сервера: 158.160.8.119
 
 
 # Контакты:
