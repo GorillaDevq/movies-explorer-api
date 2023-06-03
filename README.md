@@ -38,8 +38,10 @@
     `npm run dev` - запускает проект в hot reload
 
 # Ссылки на проект 
-  [Ссылка на репозиторий проекта](https://github.com/GorillaDevq/movies-explorer-api) </b>
-  [Ссылка на домен --------]() </b>
+  [Ссылка на репозиторий проекта](https://github.com/GorillaDevq/movies-explorer-api) 
+
+  [Ссылка на домен](https://api.gdq.movies-explorer.nomoredomains.monster/) 
+
   IP сервера: 158.160.8.119
 
 
