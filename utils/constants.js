@@ -32,6 +32,8 @@ const allowedCors = [
   'http:188.233.6.148',
   'http://localhost:3000',
   'http://localhost:3001',
+  'https://GDQ.movies-explorer.nomoredomains.monster',
+  'http://GDQ.movies-explorer.nomoredomains.monster',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
