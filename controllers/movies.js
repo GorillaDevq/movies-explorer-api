@@ -9,7 +9,6 @@ const {
   CAST_ERROR_NAME,
   MOVIE_POST_VALIDATION_ERROR_MESSAGE,
   MOVIE_NOT_FOUNG_ERROR_MESSAGE,
-  MOVIE_DELETE_MESSAGE,
   MOVIE_DELETE_VALIDATION_ERROR_MESSAGE,
 } = require('../utils/constants');
 
@@ -42,7 +41,7 @@ const deleteMovie = (req, res, next) => {
       if (!movie) next(new NotFoundError(MOVIE_NOT_FOUNG_ERROR_MESSAGE));
       else if (req.user._id.toString() === movie.owner._id.toString()) {
         Movie.deleteOne({ _id: movieId })
-          .then(() => res.send({ message: MOVIE_DELETE_MESSAGE }))
+          .then(() => res.send(movie))
           .catch(next);
       } else next(new ForbiddenError(FORBIDDEN_ERROR_MESSAGE));
     })
