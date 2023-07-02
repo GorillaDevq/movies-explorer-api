@@ -35,6 +35,10 @@ const createUser = (req, res, next) => {
     .then((user) => {
       const userConfig = user.toObject();
       delete userConfig.password;
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
+      res.cookie('token', token, {
+        httpOnly: true,
+      });
       res.status(CREATE_CODE).send(userConfig);
     })
     .catch((err) => {
@@ -85,4 +89,9 @@ const updateUser = (req, res, next) => {
     });
 };
 
-module.exports = { getUserInfo, createUser, login, logout, updateUser };
+// CHECK TOKEN
+const checkToken = (req, res) => {
+  res.send({ message: 'Успешный вход' });
+};
+
+module.exports = { getUserInfo, createUser, login, logout, updateUser, checkToken };
