@@ -91,8 +91,12 @@ const updateUser = (req, res, next) => {
 };
 
 // CHECK TOKEN
-const checkToken = (req, res) => {
-  res.send({ message: 'Успешный вход' });
+const checkToken = (req, res, next) => {
+  try {
+    res.send({ message: 'Успешный вход' });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = { getUserInfo, createUser, login, logout, updateUser, checkToken };
