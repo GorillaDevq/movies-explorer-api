@@ -84,14 +84,19 @@ const updateUser = (req, res, next) => {
       else res.send(user);
     })
     .catch((err) => {
-      if (err.name === VALIDATION_ERROR_NAME) next(new ValidationError(USER_UPDATE_VALIDATION_ERROR_MESSAGE));
+      if (err.code === DUPLICATE_ERROR_CODE) next(new ConflictError(DUPLICATE_ERROR_MESSAGE));
+      else if (err.name === VALIDATION_ERROR_NAME) next(new ValidationError(USER_UPDATE_VALIDATION_ERROR_MESSAGE));
       else next(err);
     });
 };
 
 // CHECK TOKEN
-const checkToken = (req, res) => {
-  res.send({ message: 'Успешный вход' });
+const checkToken = (req, res, next) => {
+  try {
+    res.send({ message: 'Успешный вход' });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = { getUserInfo, createUser, login, logout, updateUser, checkToken };

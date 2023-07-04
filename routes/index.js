@@ -13,7 +13,7 @@ rootRouter.post('/signin', loginValidator, login);
 
 rootRouter.delete('/signout', auth, logout);
 
-rootRouter.get('/token', auth, checkToken);
+rootRouter.post('/token', auth, checkToken);
 
 rootRouter.use('/movies', movieRouter);
 rootRouter.use('/users', userRouter);
